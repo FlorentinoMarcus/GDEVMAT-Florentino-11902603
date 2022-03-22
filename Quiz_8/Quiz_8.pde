@@ -34,40 +34,22 @@ void spawnWalkers()
     
     walkers[i].position.x = -500;
     walkers[i].position.y = 200;
+    walkers[i].mass = 10 - i;
     walkers[i].scale = walkers[i].mass * 15;
-    walkers[i].col = color(random(255), random(255), random(255));
+    walkers[i].col = color(random(1, 255), random(1, 255), random(1, 255));
+    walkers[i].alpha = random(150, 255);
   }
 }
 
 void borderCheck()
 {
   for(int i = 0; i < walkers.length; i++)
-  {
-    
-    /*
+  {   
     if(walkers[i].position.x >= Window.right)
     {
       walkers[i].velocity.x *= -1;
     }
-    if(walkers[i].position.x <= Window.left)
-    {
-      walkers[i].velocity.x *= 1;
-    }
     if(walkers[i].position.y <= Window.bottom)
-    {
-      walkers[i].velocity.y *= -1;
-    }
-    if(walkers[i].position.y >= Window.top)
-    {
-      walkers[i].velocity.y *= 1;
-    }
-    */
-    
-    if((walkers[i].position.x >= Window.right) || (walkers[i].position.x <= Window.left))
-    {
-      walkers[i].velocity.x *= -1;
-    }
-    if((walkers[i].position.y <= Window.bottom) ||(walkers[i].position.y >= Window.top))
     {
       walkers[i].velocity.y *= -1;
     }

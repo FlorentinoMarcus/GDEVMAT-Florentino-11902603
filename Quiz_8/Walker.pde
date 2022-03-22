@@ -5,9 +5,9 @@ public class Walker
   public PVector acceleration = new PVector();
   public float scale = 15;
   public float velocityLimit = 10;
-  public float mass = random(1, 10);
+  public float mass;
   public color col;
-  public float alpha = 255;
+  public float alpha;
   
   
   public Walker()
